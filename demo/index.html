@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Firekit</title>
+    <meta charset="utf-8">
+    <meta name="description" content="AngularJS module for content management with Firebase">
+    <meta name="author" content="Sinan Bolel <sinanbolel@gmail.com>">
+    <meta name="keywords" content="CMS, AngularJS, Firebase, content, management">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <style>.md-button.md-fab.md-accent{background:#EC407A;color:white;}</style>
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+    <link rel="stylesheet" href="bower_components/ionicons/css/ionicons.css" />
+    <!-- endbower -->
+    <!-- application styles -->
+    <link rel="stylesheet" href="assets/release/app.min.css">
+    <!-- bower:js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/firebase/firebase.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <!-- endbower -->
+    <!-- append base URL for HTML5 mode -->
+    <script type="text/javascript">angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="'+window.location.pathname+'" />'));</script>
+    <!-- firebaseCms javascript -->
+    <script src="lib/angular-firebase-cms.min.js"></script>
+    <!-- application javascript -->
+    <script src="app.js"></script>
+  </head>
+
+  <body ng-app="demoApp">
+    <div id="content-view">
+      <md-content layout="column">
+      <div id="home-view" class="cover fullscreen center" layout="column" layout-align="center center">
+        <span flex></span>
+        <h1 class="large">firekit cms</h1>
+        <h3>sinan bolel (sinanbolel@gmail.com)</h3>
+        <div layout="row" class="mt20">
+          <md-button href="https://github.com/sbolel" target="_blank" class="md-button md-fab md-accent" aria-label="Github">
+          <md-tooltip ng-cloak>sbolel</md-tooltip>
+          <md-icon style="font-size:2em;margin-top:-4px;" md-font-icon="ion-social-github"></md-icon>
+          </md-button>
+          <md-button href="https://twitter.com/sinbols" target="_blank" class="md-button md-fab md-accent" aria-label="Twitter">
+          <md-tooltip ng-cloak>@sinbols</md-tooltip>
+          <md-icon style="font-size:2em;margin-top:-4px;" md-font-icon="ion-social-twitter"></md-icon>
+          </md-button>
+        </div>
+        <span flex></span>
+      </div>
+      </md-content>
+    </div>
+  </body>
+</html>

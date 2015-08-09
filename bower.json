@@ -1,0 +1,41 @@
+{
+  "name": "angular-firebase-cms",
+  "version": "1.0.0",
+  "authors": [
+    "Sinan Bolel <sinanbolel@gmail.com>"
+  ],
+  "description": "AngularJS module for content management with Firebase",
+  "main": "dist/angular-firebase-cms.min.js",
+  "keywords": [
+    "CMS",
+    "Firebase",
+    "AngularJS",
+    "Angular",
+    "content",
+    "management"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/sbolel/angular-firebase-cms",
+  "ignore": [
+    "**/node_modules/*",
+    "**/bower_components/*",
+    "dist/angular-firebase-cms.js",
+    "src",
+    "demo",
+    "test",
+    "tests",
+    ".bowerrc",
+    ".gitignore",
+    "Gruntfile.js"
+  ],
+  "dependencies": {
+    "angular": "~1.4.3",
+    "firebase": "~2.2.7"
+  },
+  "devDependencies": {
+    "angular-aria": "~1.4.3",
+    "angular-material": "~0.10.0",
+    "angular-route": "~1.4.3",
+    "ionicons": "~2.0.1"
+  }
+}
