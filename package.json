@@ -1,0 +1,40 @@
+{
+  "name": "angular-firebase-cms",
+  "version": "1.0.0",
+  "description": "AngularJS module for content management with Firebase",
+  "main": "dist/angular-firebase-cms.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/sbolel/angular-firebase-cms.git"
+  },
+  "keywords": [
+    "CMS",
+    "Firebase",
+    "AngularJS",
+    "Angular",
+    "content",
+    "management"
+  ],
+  "author": "Sinan Bolel <sinanbolel@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sbolel/angular-firebase-cms/issues"
+  },
+  "homepage": "https://github.com/sbolel/angular-firebase-cms#readme",
+  "devDependencies": {
+    "bower": "^1.4.1",
+    "grunt": "^0.4.5",
+    "grunt-contrib-connect": "^0.10.1",
+    "grunt-contrib-copy": "^0.8.0",
+    "grunt-contrib-cssmin": "^0.13.0",
+    "grunt-contrib-jshint": "^0.11.2",
+    "grunt-contrib-uglify": "^0.9.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-ng-annotate": "^1.0.1",
+    "grunt-wiredep": "^2.0.0",
+    "wiredep": "^2.2.2"
+  }
+}
