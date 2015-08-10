@@ -1,58 +1,58 @@
 /**
- * FirebaseCms class
- * @name FirebaseCms
+ * CmsClient class
+ * @name CmsClient
  * @description
  *
  *
  */
-function FirebaseCms (url) {
+function CmsClient (url) {
   this.firebaseUrl = url;
 }
 
 /**
  * @ngdoc module
- * @name firebaseCms
+ * @name $cms.client
  */
-var firebaseCmsModule = angular.module('firebaseCms', []);
+var cmsClientModule = angular.module('cmsClient', []);
 
 /**
  * @ngdoc provider
- * @name firebaseCmsProvider
+ * @name cmsClientProvider
  * @description
  *
  *
  */
-firebaseCmsModule.provider('firebaseCms',[function() {
+cmsClientModule.provider('cmsClient',[function() {
   var firebaseUrl = null;
   this.setContentUrl = function(url) {
     firebaseUrl = url;
   };
-  this.$get = [function FirebaseCmsFactory() {
-    return new FirebaseCms(firebaseUrl);
+  this.$get = [function CmsClientFactory() {
+    return new CmsClient(firebaseUrl);
   }];
 }]);
 
 /**
  * @ngdoc run
- * @name firebaseCms
+ * @name cmsClient
  * @description
  *
  *
  */
-firebaseCmsModule.run(['firebaseCmsService', '$log', function (firebaseCmsService, $log) {
-  firebaseCmsService.init().then(function(content){
+cmsClientModule.run(['$cmsClient', '$log', function ($cmsClient, $log) {
+  $cmsClient.init().then(function(content){
     $log.debug("CMS Content:", content);
   });
 }]);
 
 /**
  * @ngdoc service
- * @name firebaseCms.firebaseCmsService
+ * @name cmsClient.cmsClient
  * @description
  *
  *
  */
-firebaseCmsModule.service('firebaseCmsService', ['firebaseCms', '$q', function (firebaseCms, $q){
+cmsClientModule.service('$cmsClient', ['cmsClient', '$q', function (cmsClient, $q){
   var _firebaseRef,
       _contentPromise = $q.defer(),
       _contentData = _contentPromise.promise,
@@ -76,7 +76,7 @@ firebaseCmsModule.service('firebaseCmsService', ['firebaseCms', '$q', function (
         }
       };
 
-  // start firebaseCms
+  // start cmsClient
   function initalize() {
     var deferred = $q.defer();
     assertConnection();
@@ -110,7 +110,7 @@ firebaseCmsModule.service('firebaseCmsService', ['firebaseCms', '$q', function (
 
   function assertConnection(){
     if (!_firebaseRef) {
-      _firebaseRef = new Firebase(firebaseCms.firebaseUrl);
+      _firebaseRef = new Firebase(cmsClient.firebaseUrl);
     }
     Firebase.goOnline();
   }
@@ -121,6 +121,89 @@ firebaseCmsModule.service('firebaseCmsService', ['firebaseCms', '$q', function (
       _firebaseRef = null;
       Firebase.goOnline();
     }
+  }
+
+  return _self;
+}]);
+
+/**
+ * CmsAdmin class
+ * @name CmsAdmin
+ * @description
+ *
+ *
+ */
+function CmsAdmin (serverUrl) {
+  this.serverUrl = serverUrl;
+}
+
+/**
+ * @ngdoc module
+ * @name cmsAdmin
+ */
+var cmsAdminModule = angular.module('cmsAdmin', []);
+
+/**
+ * @ngdoc provider
+ * @name cmsAdminProvider
+ * @description
+ *
+ *
+ */
+cmsAdminModule.provider('cmsAdmin',[function() {
+  var serverUrl = null;
+  this.serverUrl = function(url) {
+    serverUrl = url;
+  };
+  this.$get = [function CmsFactory() {
+    return new CmsAdmin(serverUrl);
+  }];
+}]);
+
+/**
+ * @ngdoc run
+ * @name cmsAdmin
+ * @description
+ *
+ *
+ */
+// cmsAdminModule.run(['cmsAdminService', '$log', function (cmsAdminService, $log) {
+  // cmsAdmin.init().then(function(content){
+    // $log.debug("CMS Admin Init", content);
+  // });
+// }]);
+
+/**
+ * @ngdoc service
+ * @name cmsAdmin.cmsAdmin
+ * @description
+ *
+ *
+ */
+cmsAdminModule.service('$cmsAdmin', ['cmsAdmin', '$q', '$http', function (cmsAdmin, $q, $http){
+
+  var _self = function(requestObject) {
+      return updateModel({
+        auth: requestObject.auth,
+        action: requestObject.action,
+        path: requestObject.path,
+        params: requestObject.params
+      });
+  };
+
+  function updateModel(requestObject){
+    var deferred = $q.defer();
+    $http.post('/admin', requestObject).
+      then(function(response) {
+        var status = response.status;
+        var data = response.data;
+        deferred.resolve(response.data);
+      }, function(response) {
+        var data = response.data || "Request failed";
+        var status = response.status;
+        deferred.reject(response.status);
+    });
+    return deferred.promise;
   }
 
   return _self;

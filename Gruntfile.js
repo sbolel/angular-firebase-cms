@@ -53,8 +53,8 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          'dist/<%= pkg.name %>.js': 'src/client.js',
-          'demo/lib/<%= pkg.name %>.js': 'src/client.js', // TODO copy file instead of re-annotating
+          'dist/<%= pkg.name %>.js': ['src/client.js', 'src/admin.js'],
+          'demo/lib/<%= pkg.name %>.js': ['src/client.js', 'src/admin.js'], // TODO copy file instead of re-annotating
           'demo/app.js': 'demo/app.js'
         }
       },
