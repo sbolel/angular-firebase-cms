@@ -22,7 +22,7 @@ var cmsClientModule = angular.module('cmsClient', []);
  *
  *
  */
-cmsClientModule.provider('$cmsClient',[function() {
+cmsClientModule.provider('cmsClient',[function() {
   var firebaseUrl = null;
   this.setContentUrl = function(url) {
     firebaseUrl = url;
@@ -150,7 +150,7 @@ var cmsAdminModule = angular.module('cmsAdmin', []);
  *
  *
  */
-cmsAdminModule.provider('$cmsAdmin',[function() {
+cmsAdminModule.provider('cmsAdmin',[function() {
   var serverUrl = null;
   this.serverUrl = function(url) {
     serverUrl = url;
