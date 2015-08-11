@@ -22,7 +22,7 @@ var cmsClientModule = angular.module('cmsClient', []);
  *
  *
  */
-cmsClientModule.provider('cmsClient',[function() {
+cmsClientModule.provider('$cmsClient',[function() {
   var firebaseUrl = null;
   this.setContentUrl = function(url) {
     firebaseUrl = url;
