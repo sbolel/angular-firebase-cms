@@ -1,8 +1,11 @@
+#!/usr/bin/env node
+
 /** TODO
  *  - add qunit tests
  */
 
 module.exports = function(grunt) {
+  'use strict';
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),

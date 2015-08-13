@@ -1,6 +1,6 @@
 {
   "name": "angular-firebase-cms",
-  "version": "1.0.0",
+  "version": "0.1.1",
   "description": "AngularJS module for content management with Firebase",
   "main": "dist/angular-firebase-cms.min.js",
   "scripts": {

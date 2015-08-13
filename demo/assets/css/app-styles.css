@@ -45,16 +45,17 @@ p.lead {
 #content-view #home-view {
   background-color: #212121;
   color: white;
+  height: 80vh;
+  min-height: 80%;
+}
+
+.center {
+  text-align: center;
 }
 
 .cover {
   margin: 0;
   padding: 0;
-}
-
-.fullscreen {
-  height: 100vh;
-  min-height: 100%;
 }
 
 .dark {

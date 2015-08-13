@@ -34,9 +34,9 @@
   </head>
 
   <body ng-app="demoApp">
-    <div id="content-view">
+    <div id="content-view" ng-controller="HomeController">
       <md-content layout="column">
-      <div id="home-view" class="cover fullscreen center" layout="column" layout-align="center center">
+      <div id="home-view" class="cover center" layout="column" layout-align="center center">
         <span flex></span>
         <h1 class="large">firekit cms</h1>
         <h3>sinan bolel (sinanbolel@gmail.com)</h3>
@@ -52,6 +52,10 @@
         </div>
         <span flex></span>
       </div>
+      <div layout="column" layout-padding>
+        <h1 class="center" flex>Content</h1>
+        <pre>{{$content | json}}</pre>
+      <div>
       </md-content>
     </div>
   </body>
