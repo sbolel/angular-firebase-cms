@@ -29,13 +29,16 @@
     "Gruntfile.js"
   ],
   "dependencies": {
-    "angular": "~1.4.3",
-    "firebase": "~2.2.7"
+    "angular": "~1.4.4",
+    "firebase": "~2.2.9"
   },
   "devDependencies": {
-    "angular-aria": "~1.4.3",
-    "angular-material": "~0.10.0",
-    "angular-route": "~1.4.3",
+    "angular-aria": "~1.4.4",
+    "angular-material": "~0.10.1",
+    "angular-route": "~1.4.4",
     "ionicons": "~2.0.1"
+  },
+  "resolutions": {
+    "angular": "~1.4.4"
   }
 }

@@ -24,7 +24,9 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <!-- endbower -->
     <!-- append base URL for HTML5 mode -->
-    <script type="text/javascript">angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="'+window.location.pathname+'" />'));</script>
+    <script type="text/javascript">
+      (function(angular){'use strict';angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="'+window.location.pathname+'" />'));})(window.angular);
+    </script>
     <!-- firebaseCms javascript -->
     <script src="lib/angular-firebase-cms.min.js"></script>
     <!-- application javascript -->
