@@ -19,7 +19,6 @@
   "ignore": [
     "**/node_modules/*",
     "**/bower_components/*",
-    "dist/angular-firebase-cms.js",
     "src",
     "demo",
     "test",
